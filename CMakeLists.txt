@@ -2,6 +2,9 @@
 # Tested only on Windows and Linux (Ubuntu 10.10)
 cmake_minimum_required(VERSION 2.8.3 FATAL_ERROR)
 
+# Hack
+set(MTS_VERSION 666)
+
 # Internal variable to know whether this is the first time CMake runs
 if (NOT DEFINED MTS_CMAKE_INIT)
   set(MTS_CMAKE_INIT ON CACHE INTERNAL "Is this the initial CMake run?")
@@ -65,17 +68,10 @@ endif()
 
 # Load the required modules
 include (MitsubaUtil)
-include (MtsGetVersionInfo)
 include (CheckCXXSourceCompiles)
 include (CMakeDependentOption)
 
-# Read the version information
-MTS_GET_VERSION_INFO()
-if (MTS_HAS_VALID_REV)
-  message(STATUS "mitsuba ${MTS_VERSION}-hg${MTS_REV_ID} (${MTS_DATE})")
-else()
-  message(STATUS "mitsuba ${MTS_VERSION} (${MTS_DATE})")
-endif()
+message(STATUS "mitsuba ${MTS_VERSION} (${MTS_DATE})")
 
 # Setup the build options
 include (MitsubaBuildOptions)

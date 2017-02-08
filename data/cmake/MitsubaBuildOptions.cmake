@@ -2,10 +2,6 @@
 #         CONFIGURATION AND DEFAULT DEFINITIONS & INCLUDES                    #
 ###############################################################################
 
-if (NOT DEFINED MTS_VERSION)
-  message(FATAL_ERROR "This file has to be included from the main build file.")
-endif()
-
 # Default initial compiler flags which may be modified by advanced users
 if (MTS_CMAKE_INIT)
   set(MTS_CXX_FLAGS "${CMAKE_CXX_FLAGS}")

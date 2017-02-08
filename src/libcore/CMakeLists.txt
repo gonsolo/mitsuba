@@ -1,8 +1,4 @@
 # mitsuba-core
-if (NOT MTS_VERSION)
-  message(FATAL_ERROR "Use the top level configuration file")
-endif()
-
 set(MTS_MAIN_HEADER ${PROJECT_SOURCE_DIR}/include/mitsuba/mitsuba.h)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include/mitsuba/core)
 set(HDRS

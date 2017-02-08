@@ -12,19 +12,18 @@
 #if defined(__clang__)
 #  define MTS_USE_BOOST_TR1 (!__has_feature(cxx_variadic_templates))
 #  define ADT_WORKAROUND 1
-#else
-#  if defined(_MSC_VER)
-#    if _MSC_VER < 1600
-#      define MTS_USE_BOOST_TR1 1
-#    else
-#      define MTS_USE_BOOST_TR1 0
-#      define ADT_WORKAROUND 1
-#    endif
-#  elif defined(__INTEL_COMPILER) && !defined(__OSX__)
+#elif defined(_MSC_VER)
+#  if _MSC_VER < 1600
 #    define MTS_USE_BOOST_TR1 1
 #  else
 #    define MTS_USE_BOOST_TR1 0
+#    define ADT_WORKAROUND 1
 #  endif
+#elif defined(__INTEL_COMPILER) && !defined(__OSX__)
+#  define MTS_USE_BOOST_TR1 1
+#else
+#  define MTS_USE_BOOST_TR1 0
+#  define ADT_WORKAROUND 1
 #endif
 
 #if !defined(ADT_WORKAROUND) && (defined(__INTEL_COMPILER) || defined(__INTELLISENSE__))

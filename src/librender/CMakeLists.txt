@@ -1,8 +1,4 @@
 # mitsuba-render
-if (NOT MTS_VERSION)
-  message(FATAL_ERROR "Use the top level configuration file")
-endif()
-
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include/mitsuba/render)
 set(HDRS
   ${INCLUDE_DIR}/bsdf.h

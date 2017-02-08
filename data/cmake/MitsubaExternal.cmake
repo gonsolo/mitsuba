@@ -2,10 +2,6 @@
 #                EXTERNAL LIBRARIES DETECTION                                 #
 ###############################################################################
 
-if (NOT DEFINED MTS_VERSION)
-  message(FATAL_ERROR "This file has to be included from the main build file.")
-endif()
-
 # Set up CMake to use the Mitsuba bundled libraries. Set the variable
 # "MTS_NO_DEPENDENCIES" to a value which evaluates to TRUE to avoid
 # using the Mitsuba dependencies even if they are present.

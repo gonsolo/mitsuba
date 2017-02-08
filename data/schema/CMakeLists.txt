@@ -1,8 +1,4 @@
 # Scene XML Schema and XSL transformer
-if (NOT MTS_VERSION)
-  message(FATAL_ERROR "Use the top level configuration file")
-endif()
-
 if (WIN32 OR MTS_SIMPLE_PATHS)
   set(SCHEMA_DESTINATION "data/schema")
 elseif (APPLE)
